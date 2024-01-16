@@ -1,6 +1,9 @@
+using Asp.Versioning;
 using CastingWorkbook.Api.Security;
+using CastingWorkbook.Api.Swagger;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,8 +19,22 @@ builder.Services.AddSecurity(tokenConfigurations);
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
+builder.Services
+    .AddApiVersioning(options =>
+    {
+        options.DefaultApiVersion = new ApiVersion(1, 0);
+        options.AssumeDefaultVersionWhenUnspecified = true;
+        options.ReportApiVersions = true;
+    })
+    .AddApiExplorer(options =>
+    {
+        options.GroupNameFormat = "'v'VVV";
+        options.SubstituteApiVersionInUrl = true;
+    });
 builder.Services.AddSwaggerGen(options =>
 {
+    options.OperationFilter<SwaggerDefaultValues>();
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
@@ -48,7 +65,17 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(options =>
+    {
+        var descriptions = app.DescribeApiVersions();
+
+        foreach (var description in descriptions)
+        {
+            var url = $"/swagger/{description.GroupName}/swagger.json";
+            var name = description.GroupName.ToUpperInvariant();
+            options.SwaggerEndpoint(url, $"CastingWorkbook {name}");
+        }
+    });
 }
 
 app.UseHttpsRedirection();

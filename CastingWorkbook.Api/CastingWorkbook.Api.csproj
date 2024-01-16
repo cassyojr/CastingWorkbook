@@ -8,6 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="V1\**" />
+    <Compile Remove="V2\**" />
+    <Content Remove="V1\**" />
+    <Content Remove="V2\**" />
+    <EmbeddedResource Remove="V1\**" />
+    <EmbeddedResource Remove="V2\**" />
+    <None Remove="V1\**" />
+    <None Remove="V2\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
