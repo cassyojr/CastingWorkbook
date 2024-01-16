@@ -1,0 +1,14 @@
+@CastingWorkbook.Api_HostAddress = https://localhost:7272
+
+GET {{CastingWorkbook.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{CastingWorkbook.Api_HostAddress}}/weatherforecast
+
+###
+
+GET {{CastingWorkbook.Api_HostAddress}}/weatherforecast
+
+###
