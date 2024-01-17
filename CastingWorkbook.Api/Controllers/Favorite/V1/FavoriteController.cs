@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
-namespace CastingWorkbook.Api.Controllers.Login.V1;
+namespace CastingWorkbook.Api.Controllers.Favorite.V1;
 
 [Authorize]
 [ApiController]

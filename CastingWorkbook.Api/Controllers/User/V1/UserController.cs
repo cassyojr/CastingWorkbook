@@ -3,7 +3,7 @@ using CastingWorkbook.Repository.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CastingWorkbook.Api.Controllers.Login.V1;
+namespace CastingWorkbook.Api.Controllers.User.V1;
 
 [Authorize]
 [ApiController]

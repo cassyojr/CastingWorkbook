@@ -4,7 +4,7 @@ using CastingWorkbook.Repository.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CastingWorkbook.Api.Controllers.Login.V1;
+namespace CastingWorkbook.Api.Controllers.Project.V1;
 
 [Authorize]
 [ApiController]
