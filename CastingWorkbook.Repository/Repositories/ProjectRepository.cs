@@ -25,7 +25,7 @@ public class ProjectRepository : IProjectRepository
             if (projectFilter.ProjectType.HasValue) 
                 query = query.Where(x => x.ProjectType == projectFilter.ProjectType.Value);
             if (projectFilter.ProjectUnion != null && projectFilter.ProjectUnion.Any()) 
-                query = query.Where(x => projectFilter.ProjectUnion.Contains(x.ProjectUnion));
+                query = query.Where(x => projectFilter.ProjectUnion.ToList().Contains((int)x.ProjectUnion));
 
             if (projectFilter.SortOrder.HasValue)
             {

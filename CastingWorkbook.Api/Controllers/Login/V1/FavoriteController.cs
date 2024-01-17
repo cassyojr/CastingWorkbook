@@ -6,7 +6,7 @@ using System.Security.Claims;
 
 namespace CastingWorkbook.Api.Controllers.Login.V1;
 
-//[Authorize]
+[Authorize]
 [ApiController]
 [ApiVersion(1.0)]
 [Route("api/v{version:apiVersion}/[controller]")]
