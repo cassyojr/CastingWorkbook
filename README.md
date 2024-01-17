@@ -8,7 +8,10 @@ Install .Net version 8 on your computer
 
 Download or clone the project 
 
+Open with Visual Studio and run the project
+
 Open the browser on http://localhost:7272
+
 Swagger URL: https://localhost:7272/swagger/index.html
 
 ## Usage
