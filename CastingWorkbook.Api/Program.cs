@@ -1,9 +1,13 @@
 using Asp.Versioning;
+using CastingWorkbook.Api.Infrastructure;
 using CastingWorkbook.Api.Security;
 using CastingWorkbook.Api.Swagger;
+using CastingWorkbook.Repository.Context;
+using CastingWorkbook.Repository.Infrastructure;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,8 +21,10 @@ new ConfigureFromConfigurationOptions<TokenConfigurations>(tokenConfigurationSec
 builder.Services.Configure<TokenConfigurations>(tokenConfigurationSection);
 builder.Services.AddSecurity(tokenConfigurations);
 builder.Services.AddAuthorization();
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(x =>
+   x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddDbContext<CastingWorkbookContext>();
 builder.Services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
 builder.Services
     .AddApiVersioning(options =>
@@ -58,9 +64,12 @@ builder.Services.AddSwaggerGen(options =>
         }
     });
 });
+builder.Services.AddRepositories();
 
 // Configure the HTTP request pipeline.
 var app = builder.Build();
+
+app.CreateInMemoryDb();
 
 if (app.Environment.IsDevelopment())
 {

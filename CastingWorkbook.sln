@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastingWorkbook.Api", "CastingWorkbook.Api\CastingWorkbook.Api.csproj", "{2E664FA3-5FF6-4149-9CF5-FDCA98671F65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CastingWorkbook.Api", "CastingWorkbook.Api\CastingWorkbook.Api.csproj", "{2E664FA3-5FF6-4149-9CF5-FDCA98671F65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastingWorkbook.Domain", "CastingWorkbook.Domain\CastingWorkbook.Domain.csproj", "{90DB7363-C5CE-4DD4-9141-00388C3C1E16}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastingWorkbook.Repository", "CastingWorkbook.Repository\CastingWorkbook.Repository.csproj", "{9E6CA5D7-D51E-4279-8308-8A45868B7C02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{2E664FA3-5FF6-4149-9CF5-FDCA98671F65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E664FA3-5FF6-4149-9CF5-FDCA98671F65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E664FA3-5FF6-4149-9CF5-FDCA98671F65}.Release|Any CPU.Build.0 = Release|Any CPU
-		{90DB7363-C5CE-4DD4-9141-00388C3C1E16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{90DB7363-C5CE-4DD4-9141-00388C3C1E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{90DB7363-C5CE-4DD4-9141-00388C3C1E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{90DB7363-C5CE-4DD4-9141-00388C3C1E16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E6CA5D7-D51E-4279-8308-8A45868B7C02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E6CA5D7-D51E-4279-8308-8A45868B7C02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E6CA5D7-D51E-4279-8308-8A45868B7C02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E6CA5D7-D51E-4279-8308-8A45868B7C02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
