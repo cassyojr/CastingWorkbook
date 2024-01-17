@@ -41,7 +41,7 @@ public class ProjectRepository : IProjectRepository
                         query = query.OrderBy(x => x.ExpirationDate);
                         break;
                     case SortOrderEnum.ExpirationDateDesc:
-                        query = query.OrderBy(x => x.ExpirationDate);
+                        query = query.OrderByDescending(x => x.ExpirationDate);
                         break;
                     default:
                         break;
