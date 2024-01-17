@@ -44,7 +44,6 @@ public class LoginController : ControllerBase
         if (user is null)
             return Unauthorized("Invalid username and password");
 
-        //Mock login just to return userName and use it as a way to link his favorite jobs
         var tokenHandler = new JwtSecurityTokenHandler();
         var tokenDescriptor = new SecurityTokenDescriptor
         {

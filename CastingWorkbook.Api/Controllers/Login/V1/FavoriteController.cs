@@ -33,8 +33,7 @@ public class FavoriteController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<IActionResult> FavoriteProject([FromRoute] int projectId)
     {
-        //var userId = HttpContext.User.Claims.First(x => x.Type == ClaimTypes.NameIdentifier.ToString()).Value;
-        var userId = 1;
+        var userId = HttpContext.User.Claims.First(x => x.Type == ClaimTypes.NameIdentifier.ToString()).Value;
 
         var isFavorited = await _favoriteRepository.FavoriteProjectAsync(Convert.ToInt32(userId), projectId);
         return Ok(isFavorited);
@@ -44,8 +43,7 @@ public class FavoriteController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<IActionResult> UnfavoriteProject([FromRoute] int projectId)
     {
-        //var userId = HttpContext.User.Claims.First(x => x.Type == ClaimTypes.NameIdentifier.ToString()).Value;
-        var userId = 1;
+        var userId = HttpContext.User.Claims.First(x => x.Type == ClaimTypes.NameIdentifier.ToString()).Value;
 
         var isFavorited = await _favoriteRepository.UnfavoriteProjectAsync(Convert.ToInt32(userId), projectId);
         return Ok(isFavorited);
